@@ -1,4 +1,4 @@
-package alwyn.vertx.chapter2
+package alwyn.vertxinaction.chapter2
 
 import io.vertx.core.AbstractVerticle
 import io.vertx.core.Context

@@ -1,4 +1,4 @@
-package alwyn.vertx.chapter1
+package alwyn.vertxinaction.chapter1
 
 import io.vertx.core.Vertx
 import io.vertx.core.net.NetSocket

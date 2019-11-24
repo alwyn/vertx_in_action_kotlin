@@ -1,4 +1,4 @@
-package alwyn.vertx.chapter3
+package alwyn.vertxinaction.chapter3
 
 import io.vertx.core.AbstractVerticle
 import io.vertx.core.json.JsonObject
