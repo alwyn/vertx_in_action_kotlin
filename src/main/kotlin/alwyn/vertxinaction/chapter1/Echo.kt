@@ -10,7 +10,7 @@ class Echo {
             numberOfConnections++
             socket.handler { buffer ->
                 socket.write(buffer)
-                if (buffer.toString().endsWith("/quit\n")) {
+                if (buffer.toString().endsWith("/quit\r\n")) {
                     socket.close()
                 }
             }

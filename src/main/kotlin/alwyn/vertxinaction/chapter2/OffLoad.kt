@@ -1,9 +1,6 @@
 package alwyn.vertxinaction.chapter2
 
-import io.vertx.core.AbstractVerticle
-import io.vertx.core.AsyncResult
-import io.vertx.core.Future
-import io.vertx.core.Vertx
+import io.vertx.core.*
 import org.slf4j.LoggerFactory
 
 class OffLoad : AbstractVerticle() {
@@ -16,14 +13,14 @@ class OffLoad : AbstractVerticle() {
         }
     }
 
-    private fun blockingCode(future: Future<String>) {
+    private fun blockingCode(promise: Promise<String>) {
         logger.info("Blocking code running")
         try {
             Thread.sleep(4000)
             logger.info("Done!")
-            future.complete("Ok!")
+            promise.complete("Ok!")
         } catch (e: InterruptedException) {
-            future.fail(e)
+            promise.fail(e)
         }
     }
 

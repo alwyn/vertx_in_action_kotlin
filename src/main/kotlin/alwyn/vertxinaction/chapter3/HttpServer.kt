@@ -14,7 +14,7 @@ class HttpServer: AbstractVerticle() {
     private fun handler(request: HttpServerRequest) {
         when (request.path()) {
             "/" -> request.response().sendFile("index.html")
-            "/sse" -> sse.request()
+//            "/sse" -> sse.request()
             else -> request.response().statusCode = 404
         }
     }
