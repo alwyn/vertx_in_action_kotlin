@@ -20,9 +20,7 @@ class Deployer : AbstractVerticle() {
     override fun start() {
         var delay = 1000L
         for (i in 1..50) {
-            vertx.setTimer(delay) {
-                id -> deploy()
-            }
+            vertx.setTimer(delay) { _ -> deploy() }
             delay += 1000
         }
     }
@@ -32,7 +30,7 @@ class Deployer : AbstractVerticle() {
             if (ar.succeeded()) {
                 val id = ar.result()
                 logger.info("Successfully deployed $id")
-                vertx.setTimer(5000) { tid ->
+                vertx.setTimer(5000) { _ ->
                     undeployLater(id)
                 }
             } else {

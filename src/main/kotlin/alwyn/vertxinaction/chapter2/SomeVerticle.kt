@@ -1,11 +1,11 @@
 package alwyn.vertxinaction.chapter2
 
 import io.vertx.core.AbstractVerticle
-import io.vertx.core.Future
+import io.vertx.core.Promise
 
 class SomeVerticle : AbstractVerticle() {
 
-    override fun start(startFuture: Future<Void>) {
+    override fun start(startFuture: Promise<Void>) {
         vertx.createHttpServer()
             .requestHandler { req ->
                 req.response().end("Ok")

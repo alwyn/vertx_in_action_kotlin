@@ -27,8 +27,9 @@ class OffLoad : AbstractVerticle() {
     private fun resultHandler(ar: AsyncResult<String>) {
         if (ar.succeeded()) {
             logger.info("Blocking code result: ${ar.result()}")
+        } else {
+            logger.error("Woops ${ar.cause()}")
         }
-        logger.error("Woops ${ar.cause()}")
     }
 }
 

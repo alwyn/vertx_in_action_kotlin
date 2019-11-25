@@ -2,17 +2,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.3.60"
-//    application
 }
 
 group = "alwyn.vertxinaction"
 version = "1.0-SNAPSHOT"
-
-/*
-application {
-    mainClassName = "alwyn.vertx.chapter1.Echo"
-}
-*/
 
 repositories {
     mavenCentral()
@@ -28,11 +21,9 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-/*
 tasks.register<JavaExec>("run") {
-    main = project.findProperty("mainClass") as String
+    main = project.properties.getOrDefault("mainClass", "alwyn.vertxinaction.chapter2.HelloVerticle") as String
     classpath = sourceSets["main"].runtimeClasspath
     systemProperties["vertx.logger-delegate-factory-class-name"] = "io.vertx.core.logging.SLF4JLogDelegateFactory"
 }
-*/
 

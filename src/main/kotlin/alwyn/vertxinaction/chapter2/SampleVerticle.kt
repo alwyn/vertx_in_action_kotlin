@@ -21,6 +21,6 @@ fun main() {
         val opts = DeploymentOptions()
             .setConfig(conf)
             .setInstances(i)
-        vertx.deployVerticle("alwyn.vertx.chapter2.SampleVerticle", opts)
+        vertx.deployVerticle("alwyn.vertxinaction.chapter2.SampleVerticle", opts)
     }
 }
